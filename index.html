@@ -74,75 +74,86 @@
       border-top-right-radius: 5px !important;
       border-bottom-right-radius: 5px !important
     }
+
+    h1.refresh {
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
-<body>
-  <div class="wrap">
-    <div class="container">
-      <h1>나누다</h1>
-      <h3>인원</h3>
-      <div class="input-group col-lg-4">
-        <input type="text" class="form-control user-name" name="user-name" placeholder="이름">
-        <input type="text" class="form-control user-cnt" name="user" value="" placeholder="명" disabled>
-      </div>
-      <div class="user-list"></div>
+<body class="d-flex flex-column min-vh-100">
+  <div class="body-wrap">
+    <div class="wrap">
+      <div class="container">
+        <h1 class="refresh" onClick="window.location.reload()">나누다</h1>
+        <h3>인원</h3>
+        <div class="input-group col-lg-4">
+          <input type="text" class="form-control user-name" name="user-name" placeholder="이름">
+          <input type="text" class="form-control user-cnt" name="user" value="" placeholder="명" disabled>
+        </div>
+        <div class="user-list"></div>
 
-      <div class="selectUser" hidden>
-        <select class="selectUsers form-control" name="selectUsers" id="selectUsers_1" disabled>
-          <option value="none">결제자 필수</option>
-        </select>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="container">
-      <div class="inner">
-        <h3>결제 항목</h3>
-        <button type="button" class="addMenu btn btn-primary">+</button>
-
-      </div>
-      <div class="col-lg-4">
-        <div class="menuDiv">
+        <div class="selectUser" hidden>
+          <select class="selectUsers form-control" name="selectUsers" id="selectUsers_1" disabled>
+            <option value="none">결제자 필수</option>
+          </select>
         </div>
       </div>
-    </div>
 
-    <hr>
+      <hr>
 
-    <div class="container">
-      <h4>총 금액</h4>
-      <div class="col-lg-4">
-        <input type="hidden" class="totalHiddenAmt">
-        <h4>총합 : <span class="totalAmt"></span> 원</h4>
-        <h4>1인당 금액 : <span class="text-danger payAmt"></span> 원</h4>
+      <div class="container">
+        <div class="inner">
+          <h3>결제 항목</h3>
+          <button type="button" class="addMenu btn btn-primary">+</button>
+
+        </div>
+        <div class="col-lg-4">
+          <div class="menuDiv">
+          </div>
+        </div>
       </div>
-    </div>
 
-    <hr>
+      <hr>
 
-    <div class="container">
-      <h3>정산내역</h3>
-      <div class="col-lg-4">
-        <div class="resultPayment">
-          <table class="resultUl table">
-            <tr>
-              <th>
-                이름
-              </th>
-              <th>
-                결제금액
-              </th>
-              <th>
-                정산금
-              </th>
-            </tr>
-          </table>
+      <div class="container">
+        <h4>총 금액</h4>
+        <div class="col-lg-4">
+          <input type="hidden" class="totalHiddenAmt">
+          <h4>총합 : <span class="totalAmt"></span> 원</h4>
+          <h4>1인당 금액 : <span class="text-danger payAmt"></span> 원</h4>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="container">
+        <h3>정산내역</h3>
+        <div class="col-lg-4">
+          <div class="resultPayment">
+            <table class="resultUl table">
+              <tr>
+                <th>
+                  이름
+                </th>
+                <th>
+                  결제금액
+                </th>
+                <th>
+                  정산금
+                </th>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <footer class="py-5 bg-dark mt-auto">
+    <div class="text-white">Develop dong & Designed by em</div>
+
+  </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
@@ -411,6 +422,7 @@
 
       return moneyToGetBack;
     }
+
   </script>
 </body>
 
